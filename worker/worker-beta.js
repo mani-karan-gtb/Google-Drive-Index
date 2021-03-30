@@ -4,7 +4,7 @@
 const authConfig = {
     "siteName": "Google Drive Index", // Website name
     "client_id": "58094879805-4654k2k5nqdid5bavft7fvea5u9po0t1.apps.googleusercontent.com",
-    "client_secret": "ZNPZ-vS6N9Zjsyb_sNMZmXHL",
+    "client_secret": "ZNPZ-vS6N9Zjsyb_sNMZmXHL", // client_id & client_secret - Please use your own!
     "refresh_token": "", // Authorize token
     /**
      * Set up multiple Drives to display; add multiples by format
@@ -81,7 +81,7 @@ const uiConfig = {
     "disable_player": false, // Set this to true to hide audio and video players
     "poster": "https://cdn.jsdelivr.net/gh/ParveenBhadooOfficial/Google-Drive-Index@2.0.10/images/poster.jpg", // Video poster URL or see Readme to how to load from Drive
     "audioposter": "https://cdn.jsdelivr.net/gh/ParveenBhadooOfficial/Google-Drive-Index@2.0.10/images/music.jpg", // Video poster URL or see Readme to how to load from Drive
-    "jsdelivr_cdn_src": "https://cdn.jsdelivr.net/gh/ParveenBhadooOfficial/Google-Drive-Index", // If Project is Forked, then enter your Github repo
+    "jsdelivr_cdn_src": "https://cdn.jsdelivr.net/gh/Maverick-2000/Google-Drive-Index", // If Project is Forked, then enter your Github repo
     "plyr_io_version": "3.6.4" // Change plyr.io version in future when needed.
 };
 
@@ -141,7 +141,7 @@ function html(current_drive_order = 0, model = {}) {
   <link rel="stylesheet" href="https://cdn.plyr.io/${uiConfig.plyr_io_version}/plyr.css" />
   <link rel="stylesheet" href="${uiConfig.jsdelivr_cdn_src}@${uiConfig.version}/css/bootstrap/${uiConfig.theme}/bootstrap.min.css">
   <style>${uiConfig.display_size ? '' : '.csize{display:none;}'}${uiConfig.display_time ? '' : '.cmtime{display:none;}'}</style>
-  <script src="${uiConfig.jsdelivr_cdn_src}@${uiConfig.version}/js/app.min.js"></script>
+  <script src="${uiConfig.jsdelivr_cdn_src}@${uiConfig.version}/js/apps.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/markdown-it@10.0.0/dist/markdown-it.min.js"></script>
 </head>
 <body>
