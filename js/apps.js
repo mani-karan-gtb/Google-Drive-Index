@@ -25,7 +25,7 @@ function init() {
   </div>
 </div>
 <br>
-<footer class="footer text-muted"> <div class="container"> <p class="float-right"> <a href="#">Back to top</a> </p> ${UI.credit ? '<p>Redesigned with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="red" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" /> </svg> by <a href="https://github.com/ParveenBhadooOfficial/Google-Drive-Index" target="_blank">TheFirstSpeedster</a></p>' : ''} <p>© ${UI.copyright_year} - <a href=" ${UI.company_link}" target="_blank"> ${UI.company_name}</a>, All Rights Reserved.</p> </div> </footer>
+<footer class="footer text-muted"> <div class="container"> <p class="float-right"> <a href="#">Back to top</a> </p> ${UI.credit ? '<p><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lightning-charge-fill" fill="red" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z" /> </svg> Dare to Defy</p>' : ''} <p>© ${UI.copyright_year} - <a href=" ${UI.company_link}" target="_blank"> ${UI.company_name}</a>, All Rights Reserved.</p> </div> </footer>
   `;
     $('body').html(html);
 }
@@ -763,6 +763,7 @@ function file_video(path) {
     const caption = name.slice(0, name.lastIndexOf('.')) + '.srt'
     const url = window.location.origin + path;
     const url_without_https=url.replace(/^(https?:|)\/\//,'')
+    const url_base64 = btoa(url)
     const content = `
   <div class="container text-center"><br>
   <div class="card text-center">
@@ -792,7 +793,7 @@ function file_video(path) {
     </button>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="intent://${url_without_https}#Intent;type=video/any;package=is.xyz.mpv;scheme=https;end;">mpv-android</a>
-      <a class="dropdown-item" href="potplayer://${url}">PotPlayer</a>
+      <a class="dropdown-item" href="mpv://${url_base64}">mpv</a>
       <a class="dropdown-item" href="vlc://${url}">VLC</a>
       <a class="dropdown-item" href="nplayer-${url}">nPlayer</a>
       <a class="dropdown-item" href="intent:${url}#Intent;package=com.mxtech.videoplayer.ad;S.title=undefined;end">MX Player (Free)</a>
